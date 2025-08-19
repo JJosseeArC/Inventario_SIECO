@@ -72,7 +72,7 @@ Incluye: gestión básica, solicitudes con aprobación/entrega, devoluciones par
 
 ## Base de Datos
 
-### Opción A (recomendada para V1)
+### Opción A (V1)
 Usa el script `SQL/sieco_estructura.sql` pero aplícale estos cambios para **texto libre** y **opcionalidad** en V1:
 
 ```sql
