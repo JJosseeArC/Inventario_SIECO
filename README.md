@@ -68,23 +68,8 @@ Incluye: gestión básica, solicitudes con aprobación/entrega, devoluciones par
 - Cambiar contraseña de administrador (se guarda en 'admin_pswd.txt').
 - Si no existe el archivo 'admin_pswd.txt', se crea el archivo con clave por defecto: 'admin123'.
 
----
-
-## Base de Datos
-
-### Opción A (V1)
-Usa el script `SQL/sieco_estructura.sql` pero aplícale estos cambios para **texto libre** y **opcionalidad** en V1:
-
-```sql
-USE sieco;
-
-ALTER TABLE solicitud
-  ADD COLUMN obra_text VARCHAR(120) NULL AFTER supervisor_id,
-  MODIFY COLUMN cuadrilla_id INT NULL,
-  MODIFY COLUMN supervisor_id INT NULL;
 
 ---
-
 
 ## Ejecución
 
@@ -117,3 +102,21 @@ ALTER TABLE solicitud
 - Implementar catálogos para obras, cuadrillas y supervisores.
 - Rediseño de la interfaz con mejoras visuales y usabilidad.
 - Migración a base de datos en red para uso multiusuario.
+
+
+---
+
+## Base de Datos
+
+### Opción A (V1)
+Usa el script `SQL/sieco_estructura.sql` pero aplícale estos cambios para **texto libre** y **opcionalidad** en V1:
+
+```sql
+USE sieco;
+
+ALTER TABLE solicitud
+  ADD COLUMN obra_text VARCHAR(120) NULL AFTER supervisor_id,
+  MODIFY COLUMN cuadrilla_id INT NULL,
+  MODIFY COLUMN supervisor_id INT NULL;
+
+---
